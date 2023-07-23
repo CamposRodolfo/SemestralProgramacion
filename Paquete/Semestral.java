@@ -1,5 +1,7 @@
 package Paquete;
 
+import Paquete.Interfaces.Departamento;
+
 public class Semestral {
   private static String ruta;
 
@@ -10,7 +12,11 @@ public class Semestral {
 
   public static void main(String[] args) {
     Menu<TipoDepartamento> menuDeDepartamentos = new Menu<>(TipoDepartamento.values());
+    // obtener valor devuelve null si el usuario decide salir del menu
     TipoDepartamento tipo = menuDeDepartamentos.obtenerValor("Departamentos", "Seleccione un departamento: ",
         "No es una opcion válida!");
+
+    Departamento departamento = tipo.obtenerDepartamento();
+    departamento.obtenerOperacion();
   }
 }

@@ -5,12 +5,12 @@ import java.lang.reflect.*;
 import Paquete.Interfaces.Operacion;
 
 public enum OperacionesMV {
-  INDICE_DE_ENDEUDAMIENTO(IndiceEndeudamiento.class),
-  INDICE_DE_LIQUIDEZ(IndiceLiquidez.class);
+  INDICE_DE_ENDEUDAMIENTO(IndiceEndeudamiento.class.getName()),
+  INDICE_DE_LIQUIDEZ(IndiceLiquidez.class.getName());
 
-  private Class<?> claseOperacion;
+  private String claseOperacion;
 
-  private OperacionesMV(Class<?> claseOperacion) {
+  private OperacionesMV(String claseOperacion) {
     this.claseOperacion = claseOperacion;
   }
 
