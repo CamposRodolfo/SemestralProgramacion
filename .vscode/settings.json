@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "a:\\Yggdrasill\\Desktop\\Semestral Programacion\\poi-4.1.0/**/*.jar"
+    ]
+}
