@@ -1,0 +1,4 @@
+/scripts/*
+/libs/*
+/Paquete/*.class
+/Paquete/**/*.class

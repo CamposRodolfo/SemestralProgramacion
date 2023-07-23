@@ -7,60 +7,62 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class IndiceLiquidez extends Ventas{ //colocar el nombre del padre en extend (Ventas, Finanzas, Humanos)
-    static final String HOJA = "mv"; // colocar el nombre de su hoja (mv, fc, rh)
-    static final int FILA = 0; //colocar la fila que se le indico
+public class IndiceLiquidez extends Ventas { // colocar el nombre del padre en extend (Ventas, Finanzas, Humanos)
+  static final String HOJA = "mv"; // colocar el nombre de su hoja (mv, fc, rh)
+  static final int FILA = 0; // colocar la fila que se le indico
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        try {
-            // Leer dos celdas del archivo Excel (solo colocar la columna de la celda que busca)
-            double activoCorriente = leerCelda(0);
-            double pasivoCorriente = leerCelda(1);
+    try {
+      // Leer dos celdas del archivo Excel (solo colocar la columna de la celda que
+      // busca)
+      double activoCorriente = leerCelda(0);
+      double pasivoCorriente = leerCelda(1);
 
-            // Realizar alguna operación matemática (por ejemplo, suma)
-            double indiceLiquidez = realizarOperacionMatematica(activoCorriente, pasivoCorriente);
+      // Realizar alguna operación matemática (por ejemplo, suma)
+      double indiceLiquidez = realizarOperacionMatematica(activoCorriente, pasivoCorriente);
 
-            // Escribir el resultado de vuelta al archivo Excel (solo colocar la columna de la celda y el valor a escribir)
-            escribirCelda(2, indiceLiquidez);
+      // Escribir el resultado de vuelta al archivo Excel (solo colocar la columna de
+      // la celda y el valor a escribir)
+      escribirCelda(2, indiceLiquidez);
 
-            System.out.println("Completado Proceso");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      System.out.println("Completado Proceso");
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+  }
 
-    // Método para leer el valor de una celda de un archivo Excel
-    public static double leerCelda(int numeroCelda) throws IOException {
-        FileInputStream archivoEntrada = new FileInputStream(getRuta());
-        Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
-        Sheet hoja = libroTrabajo.getSheet(HOJA);
-        Row fila = hoja.getRow(FILA);
-        Cell celda = fila.getCell(numeroCelda);
-        double valorCelda = celda.getNumericCellValue();
-        libroTrabajo.close();
-        return valorCelda;
-    }
+  // Método para leer el valor de una celda de un archivo Excel
+  public static double leerCelda(int numeroCelda) throws IOException {
+    FileInputStream archivoEntrada = new FileInputStream(getRuta());
+    Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
+    Sheet hoja = libroTrabajo.getSheet(HOJA);
+    Row fila = hoja.getRow(FILA);
+    Cell celda = fila.getCell(numeroCelda);
+    double valorCelda = celda.getNumericCellValue();
+    libroTrabajo.close();
+    return valorCelda;
+  }
 
-    // Método para realizar una operación matemática con dos números
-    public static double realizarOperacionMatematica(double num1, double num2) {
-        // Por ejemplo, sumemos los dos números
-        return num1 / num2;
-    }
+  // Método para realizar una operación matemática con dos números
+  public static double realizarOperacionMatematica(double num1, double num2) {
+    // Por ejemplo, sumemos los dos números
+    return num1 / num2;
+  }
 
-    // Método para escribir el resultado de vuelta a una celda en un archivo Excel
-    public static void escribirCelda(int numeroCelda, double valor) throws IOException {
-        FileInputStream archivoEntrada = new FileInputStream(getRuta());
-        Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
-        Sheet hoja = libroTrabajo.getSheet(HOJA);
-        Row fila = hoja.getRow(FILA);
-        Cell celda = fila.createCell(numeroCelda);
-        celda.setCellValue(valor);
+  // Método para escribir el resultado de vuelta a una celda en un archivo Excel
+  public static void escribirCelda(int numeroCelda, double valor) throws IOException {
+    FileInputStream archivoEntrada = new FileInputStream(getRuta());
+    Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
+    Sheet hoja = libroTrabajo.getSheet(HOJA);
+    Row fila = hoja.getRow(FILA);
+    Cell celda = fila.createCell(numeroCelda);
+    celda.setCellValue(valor);
 
-        // Guardar los cambios de vuelta al archivo
-        FileOutputStream archivoSalida = new FileOutputStream(getRuta());
-        libroTrabajo.write(archivoSalida);
-        libroTrabajo.close();
-        archivoSalida.close();
-    }
+    // Guardar los cambios de vuelta al archivo
+    FileOutputStream archivoSalida = new FileOutputStream(getRuta());
+    libroTrabajo.write(archivoSalida);
+    libroTrabajo.close();
+    archivoSalida.close();
+  }
 }
