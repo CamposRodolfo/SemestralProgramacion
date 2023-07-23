@@ -8,12 +8,12 @@ import Paquete.MV.IndiceEndeudamiento;
 import Paquete.MV.IndiceLiquidez;
 
 public enum OperacionesFC {
-  INDICE_DE_ENDEUDAMIENTO(IndiceEndeudamiento.class),
-  INDICE_DE_LIQUIDEZ(IndiceLiquidez.class);
+  INDICE_DE_ENDEUDAMIENTO(IndiceEndeudamiento.class.getName()),
+  INDICE_DE_LIQUIDEZ(IndiceLiquidez.class.getName());
 
-  private Class<?> claseOperacion;
+  private String claseOperacion;
 
-  private OperacionesFC(Class<?> claseOperacion) {
+  private OperacionesFC(String claseOperacion) {
     this.claseOperacion = claseOperacion;
   }
 

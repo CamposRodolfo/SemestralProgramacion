@@ -8,21 +8,21 @@ import Paquete.MV.Ventas;
 import Paquete.Interfaces.Departamento;
 
 public enum TipoDepartamento {
-  VENTAS_Y_MERCADEO(Ventas.class),
-  FINANZAS_Y_CONTABILIDAD(Finanzas.class),
-  RECURSOS_HUMANOS(Humanos.class);
+  VENTAS_Y_MERCADEO(Ventas.class.getName()),
+  FINANZAS_Y_CONTABILIDAD(Finanzas.class.getName()),
+  RECURSOS_HUMANOS(Humanos.class.getName());
 
-  private Class<?> claseOperacion;
+  private String claseOperacion;
 
-  private TipoDepartamento(Class<?> claseOperacion) {
+  private TipoDepartamento(String claseOperacion) {
     this.claseOperacion = claseOperacion;
   }
 
-  public Departamento obtenerOperacion() {
+  public Departamento obtenerDepartamento() {
     Object instance = null;
 
     try {
-      Class<?> clazz = Class.forName(String.valueOf(this.claseOperacion));
+      Class<?> clazz = Class.forName(this.claseOperacion);
       Constructor<?> constructor = clazz.getConstructor();
       instance = constructor.newInstance();
     } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException
