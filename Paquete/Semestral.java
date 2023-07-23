@@ -1,7 +1,5 @@
 package Paquete;
 
-import Paquete.MV.IndiceEndeudamiento;
-
 public class Semestral {
   private static String ruta;
 
@@ -11,5 +9,8 @@ public class Semestral {
   }
 
   public static void main(String[] args) {
+    Menu<TipoDepartamento> menuDeDepartamentos = new Menu<>(TipoDepartamento.values());
+    TipoDepartamento tipo = menuDeDepartamentos.obtenerValor("Departamentos", "Seleccione un departamento: ",
+        "No es una opcion válida!");
   }
 }

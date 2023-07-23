@@ -1,7 +1,10 @@
 package Paquete.MV;
 
-import Paquete.Semestral;
+import Paquete.Interfaces.*;
 
-public class Ventas extends Semestral {
+public class Ventas implements Departamento {
 
+  public Operacion obtenerOperacion() {
+    return null;
+  }
 }

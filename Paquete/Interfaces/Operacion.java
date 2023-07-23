@@ -1,9 +1,9 @@
-package Paquete;
+package Paquete.Interfaces;
 
 /**
  * Calculadora
  */
-public interface Calculadora {
+public interface Operacion {
 
   public double calcular();
 
