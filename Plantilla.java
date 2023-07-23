@@ -12,8 +12,6 @@ public class Plantilla extends Ventas{ //colocar el nombre del padre en extend (
     static final int FILA = 0; //colocar la fila que se le indico
 
     public static void main(String[] args) {
-        // Proporciona la ruta de tu archivo Excel
-        System.out.println(getRuta());
 
         try {
             // Leer dos celdas del archivo Excel (solo colocar la columna de la celda que busca)
@@ -47,7 +45,7 @@ public class Plantilla extends Ventas{ //colocar el nombre del padre en extend (
     // Método para realizar una operación matemática con dos números
     public static double realizarOperacionMatematica(double num1, double num2) {
         // Por ejemplo, sumemos los dos números
-        return num1 + num2;
+        return num1 / num2;
     }
 
     // Método para escribir el resultado de vuelta a una celda en un archivo Excel
