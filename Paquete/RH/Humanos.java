@@ -1,7 +1,10 @@
 package Paquete.RH;
 
-import Paquete.Semestral;
+import Paquete.Interfaces.*;
 
-public class Humanos extends Semestral{
-    
+public class Humanos implements Departamento {
+
+  public Operacion obtenerOperacion() {
+    return null;
+  }
 }

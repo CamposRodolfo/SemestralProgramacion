@@ -1,7 +1,10 @@
 package Paquete.FC;
 
-import Paquete.Semestral;
+import Paquete.Interfaces.*;
 
-public class Finanzas extends Semestral{
-    
+public class Finanzas implements Departamento {
+
+  public Operacion obtenerOperacion() {
+    return null;
+  }
 }
