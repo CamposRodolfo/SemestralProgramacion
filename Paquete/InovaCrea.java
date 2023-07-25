@@ -2,7 +2,7 @@ package Paquete;
 
 import Paquete.Interfaces.Departamento;
 
-public class Semestral {
+public class InovaCrea {
   private static String ruta;
 
   public static String getRuta() {
