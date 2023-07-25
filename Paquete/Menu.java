@@ -23,6 +23,7 @@ public class Menu<E extends Enum<E>> {
   private int obtenerOpcion(String titulo, String mensaje, String error) {
     int opcion = 0;
 
+    System.out.println();
     System.out.println(titulo);
     imprimirMenu();
     while (true) {
