@@ -43,9 +43,7 @@ public class Excel {
     archivoSalida.close();
   }
 
-  // Método para escribir el resultado de vuelta a una celda en un archivo Excel
-  public static void escribirCeldaConEstilo(String nombreHoja, int numeroFila, int numeroCelda, double valor,
-      CellStyle estilo)
+  public static void escribirCeldaString(String nombreHoja, int numeroFila, int numeroCelda, String valor)
       throws IOException {
     FileInputStream archivoEntrada = new FileInputStream(getRuta());
     Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
@@ -53,6 +51,32 @@ public class Excel {
     Row fila = hoja.getRow(numeroFila);
     Cell celda = fila.createCell(numeroCelda);
     celda.setCellValue(valor);
+
+    // Guardar los cambios de vuelta al archivo
+    FileOutputStream archivoSalida = new FileOutputStream(getRuta());
+    libroTrabajo.write(archivoSalida);
+    libroTrabajo.close();
+    archivoSalida.close();
+  }
+
+  // Método para escribir el resultado de vuelta a una celda en un archivo Excel
+  public static void escribirCeldaConFormato(String nombreHoja, int numeroFila, int numeroCelda, double valor,
+      String formato)
+      throws IOException {
+    FileInputStream archivoEntrada = new FileInputStream(getRuta());
+    Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
+    Sheet hoja = libroTrabajo.getSheet(nombreHoja);
+    Row fila = hoja.getRow(numeroFila);
+    Cell celda = fila.createCell(numeroCelda);
+    CellStyle estilo = libroTrabajo.createCellStyle();
+    estilo.setDataFormat(libroTrabajo.createDataFormat().getFormat(formato));
     celda.setCellStyle(estilo);
+    celda.setCellValue(valor);
+
+    // Guardar los cambios de vuelta al archivo
+    FileOutputStream archivoSalida = new FileOutputStream(getRuta());
+    libroTrabajo.write(archivoSalida);
+    libroTrabajo.close();
+    archivoSalida.close();
   }
 }

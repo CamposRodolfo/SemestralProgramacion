@@ -13,14 +13,6 @@ public class IndiceRetencionTalento implements Operacion {
   static final String HOJA = "rh"; // colocar el nombre de tu hoja (mv, fc, rh)
   static final int FILA = 4; // colocar la fila que se te indico
 
-  public static void main(String[] args) {
-    Operacion calculadora = new IndiceRetencionTalento();
-    double resultado = calculadora.calcular();
-    calculadora.guardarValor(resultado);
-    System.out.println(resultado);
-    calculadora.explicarIndice();
-  }
-
   public double calcular() {
     // Coloca las variables que necesitas
     double TotalEmpleados = 0;
