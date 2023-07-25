@@ -3,12 +3,15 @@ package Paquete.RH;
 import java.lang.reflect.*;
 
 import Paquete.Interfaces.Operacion;
-import Paquete.MV.IndiceEndeudamiento;
-import Paquete.MV.IndiceLiquidez;
 
 public enum OperacionesRH {
-  INDICE_DE_ROTACION_PERSONAL(IndiceEndeudamiento.class.getName()),
-  INDICE_DE_SATISFACCION_LABORAL(IndiceLiquidez.class.getName());
+  TASA_DE_RETENCION_DE_TALENTO(IndiceRetencionTalento.class.getName()),
+  PROMEDIO_DE_COMPENSACION_POR_EMPLEADO(PromedioCompensacion.class.getName()),
+  PORCENTAJE_DE_EMPLEADOS_PROMOVIDOS(PorcentajePromovidos.class.getName()),
+  INDICE_DE_CAPACITACION_Y_DESARROLLO(IndiceCapacitacionDesarrollo.class.getName()),
+  INDICE_DE_SATISFACCION_LABORAL(IndiceDeSatisfaccionLaboral.class.getName()),
+  INDICE_DE_ROTACION_DE_PERSONAL(IndiceRotacion.class.getName()),
+  TASA_DE_AUSENTISMO_POR_EMPLEADO(TasaAusentismo.class.getName());
 
   private String claseOperacion;
 
