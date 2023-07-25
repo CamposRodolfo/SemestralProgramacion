@@ -8,8 +8,8 @@ import Paquete.Interfaces.Operacion;
 public enum OperacionesFC {
   INDICE_DE_PAGO_A_PRINCIPAL(IndicePagoAPrincipal.class.getName()),
   INDICADOR_DE_ROI(IndicadorRoi.class.getName()),
-  PROMEDIO_DE_RESPUESTA_A_CONSULTAS_DE_CLIENTES(PromedioRespuestaConsulta.class.getName()),
-  INDICE_DE_TENDENCIA(IndiceTendencia.class.getName()),
+  PROMEDIO_DE_RESPUESTA_A_CONSULTAS_DE_CLIENTES(PromedioRespuestaConsultaClientes.class.getName()),
+  INDICE_DE_TENDENCIA_ESTATICO(IndiceTendenciaEstatico.class.getName()),
   FUNCION_MEDIA_GEOMETRICA(FuncionMediaGeometrica.class.getName()),
   INDICADOR_DE_TASA_DE_RETENCION_DE_CLIENTES(IndicadorTasaRetencionClientes.class.getName()),
   INDICE_DE_PAGO(IndicePago.class.getName()),
@@ -37,4 +37,5 @@ public enum OperacionesFC {
 
     return (instance != null) ? (Operacion) instance : null;
   }
+
 }
