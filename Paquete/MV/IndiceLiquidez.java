@@ -3,6 +3,7 @@ package Paquete.MV;
 import java.io.IOException;
 import Paquete.Interfaces.*;
 import Paquete.Excel;
+import java.text.DecimalFormat;
 
 /**
  * IndiceEndeudamiento
@@ -54,11 +55,15 @@ public class IndiceLiquidez implements Operacion {
     System.out.println("\n<n.:Calculos del índice de Liquides:.");
     System.out.println("    -Activos corriente: " + activoCorriente);
     System.out.println("    -Pasivos corriente: " + pasivoCorriente);
-    System.out.println("    -Índice de Liquides: " + (activoCorriente / pasivoCorriente) + "\n");
+    System.out.println("    -Índice de Liquidez: " + (activoCorriente / pasivoCorriente) + "\n");
   }
 
   // Haz todos tus calculos raros aqui
   private double realizarOperacionMatematica(double activo, double pasivo) {
-    return activo / pasivo;
+    double resultado = activo / pasivo;
+      DecimalFormat df = new DecimalFormat("#.##");
+        resultado = Double.parseDouble(df.format(resultado));
+
+        return resultado;
   }
 }

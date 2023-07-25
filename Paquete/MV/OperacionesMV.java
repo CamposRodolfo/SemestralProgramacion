@@ -5,8 +5,18 @@ import java.lang.reflect.*;
 import Paquete.Interfaces.Operacion;
 
 public enum OperacionesMV {
+  INDICE_DE_LIQUIDEZ(IndiceLiquidez.class.getName()),
   INDICE_DE_ENDEUDAMIENTO(IndiceEndeudamiento.class.getName()),
-  INDICE_DE_LIQUIDEZ(IndiceLiquidez.class.getName());
+  MARGEN_DE_BENEFICIO_BRUTO(MargenBeneficioBruto.class.getName()),
+  MARGEN_DE_BENEFICIO_NETO(MargenBeneficioNeto.class.getName()),
+  ROTACION_DE_ACTIVOS(RotacionActivos.class.getName()),
+  PAGO_DE_INTERES_SOBRE_LA_DEUDA(PagoInteresesMensuales.class.getName()),
+  RATIO_DE_EFICIENCIA_DE_INVENTARIO(EficienciaInventarios.class.getName()),
+  RATIO_DE_EFICIENCIA_DE_COBROS(RatioEficienciaCobros.class.getName()),
+  RATIO_DE_EFICIENCIA_DE_PAGOS(RatioEficienciaPagos.class.getName()),
+  TASA_DE_RETORNO_DE_INVERSION(RetornoDeLaInversión.class.getName())
+  ;
+
 
   private String claseOperacion;
 

@@ -3,6 +3,7 @@ package Paquete.MV; //colocar el nombre de su paquete
 import java.io.IOException;
 import Paquete.Interfaces.*;
 import Paquete.Excel;
+import java.text.DecimalFormat;
 
 /**
  * Ratio De Eficiencia De Pagos
@@ -19,8 +20,8 @@ public class RatioEficienciaPagos implements Operacion {
 
     try {
       // Asigna los valores del excel.
-      cuentasPorPagar = Excel.leerCelda(HOJA, FILA, 0);
-      compras = Excel.leerCelda(HOJA, FILA, 1);
+      cuentasPorPagar = Excel.leerCelda(HOJA, FILA, 1);
+      compras = Excel.leerCelda(HOJA, FILA, 2);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -32,7 +33,7 @@ public class RatioEficienciaPagos implements Operacion {
   public void guardarValor(double valor) {
     try {
       // Recuerda poner donde guardas tu resultado
-      Excel.escribirCelda(HOJA, FILA, 2, valor);
+      Excel.escribirCelda(HOJA, FILA, 4, valor);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -48,6 +49,10 @@ public class RatioEficienciaPagos implements Operacion {
 
   // Haz todos tus cálculos raros aquí
   private double realizarOperacionMatematica(double cuentasPorPagar, double compras) {
-    return cuentasPorPagar / compras;
+    double resultado = cuentasPorPagar / compras;
+      DecimalFormat df = new DecimalFormat("#.##");
+        resultado = Double.parseDouble(df.format(resultado));
+
+        return resultado;
   }
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import Paquete.Interfaces.*;
 import Paquete.Excel;
+import java.text.DecimalFormat;
 
 /**
  * Margen De Beneficio Neto
@@ -13,7 +14,7 @@ import Paquete.Excel;
 public class MargenBeneficioNeto implements Operacion {
   static final String HOJA = "mv"; // colocar el nombre de tu hoja (mv, fc, rh)
   static final int FILA = 16; // colocar tu fila que se le indico
-
+ 
   public double calcular() {
     // Coloca las variables que necesitas
     double beneficioNeto = 0;
@@ -21,8 +22,8 @@ public class MargenBeneficioNeto implements Operacion {
 
     try {
       // Asigna los valores del excel.
-      beneficioNeto = Excel.leerCelda(HOJA, FILA, 0);
-      ingresoBruto = Excel.leerCelda(HOJA, FILA, 1);
+      beneficioNeto = Excel.leerCelda(HOJA, FILA, 1);
+      ingresoBruto = Excel.leerCelda(HOJA, FILA, 2);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -34,7 +35,7 @@ public class MargenBeneficioNeto implements Operacion {
   public void guardarValor(double valor) {
     try {
       // Recuerda poner donde guardas tu resultado
-      Excel.escribirCelda(HOJA, FILA, 2, valor);
+      Excel.escribirCelda(HOJA, FILA, 4, valor);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -51,6 +52,10 @@ public class MargenBeneficioNeto implements Operacion {
   // Haz todos tus cálculos raros aquí
   private double realizarOperacionMatematica(double beneficioNeto, double ingresoBruto) {
     // Margen de beneficio neto = (Beneficio Neto / Ingreso Bruto) * 100
-    return (beneficioNeto / ingresoBruto) * 100;
+  double resultado = (beneficioNeto / ingresoBruto) * 100;
+     DecimalFormat df = new DecimalFormat("#.##");
+        resultado = Double.parseDouble(df.format(resultado));
+
+        return resultado;
   }
 }
