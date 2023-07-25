@@ -13,14 +13,6 @@ public class TasaAusentismo implements Operacion {
   static final String HOJA = "rh"; // colocar el nombre de tu hoja (mv, fc, rh)
   static final int FILA = 20; // colocar tu filaque se le indico
 
-  public static void main(String[] args) {
-    Operacion calculadora = new TasaAusentismo();
-    double resultado = calculadora.calcular();
-    calculadora.guardarValor(resultado);
-    System.out.println(resultado);
-    calculadora.explicarIndice();
-  }
-
   public double calcular() {
     // Coloca las variables que necesitas
     int horasTrabajadas = 1750;
