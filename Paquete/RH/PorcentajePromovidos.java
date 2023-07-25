@@ -13,14 +13,6 @@ public class PorcentajePromovidos implements Operacion {
   static final String HOJA = "rh";
   static final int FILA = 12;
 
-  public static void main(String[] args) {
-    Operacion calculadora = new PorcentajePromovidos();
-    double resultado = calculadora.calcular();
-    calculadora.guardarValor(resultado);
-    System.out.println(resultado);
-    calculadora.explicarIndice();
-  }
-
   public double calcular() {
     double tEmpleados = 0;
     double tPromovidos = 0;

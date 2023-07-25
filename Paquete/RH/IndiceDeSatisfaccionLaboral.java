@@ -13,14 +13,6 @@ public class IndiceDeSatisfaccionLaboral implements Operacion {
   static final String HOJA = "rh"; // hoja rh
   static final int FILA = 28; // fila #28
 
-  public static void main(String[] args) {
-    Operacion calculadora = new IndiceDeSatisfaccionLaboral();
-    double resultado = calculadora.calcular();
-    calculadora.guardarValor(resultado);
-    System.out.println(resultado);
-    calculadora.explicarIndice();
-  }
-
   public double calcular() {
     // variables entrada (preg1 a preg7), salida ISlab
     String preg1 = null;
