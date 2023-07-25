@@ -1,68 +1,46 @@
-package Paquete.MV; //colocar el nombre de su paquete
+package Paquete.MV;
 
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class IndiceLiquidez extends Ventas { // colocar el nombre del padre en extend (Ventas, Finanzas, Humanos)
-  static final String HOJA = "mv"; // colocar el nombre de su hoja (mv, fc, rh)
-  static final int FILA = 0; // colocar la fila que se le indico
+import Paquete.Interfaces.*;
+import Paquete.Excel;
 
-  public static void main(String[] args) {
+/**
+ * IndiceEndeudamiento
+ */
+// Cambiar mobre de la clase
+public class IndiceLiquidez implements Operacion {
+  static final String HOJA = "mv"; // colocar el nombre de tu hoja (mv, fc, rh)
+  static final int FILA = 1; // colocar tu filaque se le indico
+
+  public double calcular() {
+    // Coloca las variables que necesitas
+    double pasivo = 0;
+    double capital = 0;
 
     try {
-      // Leer dos celdas del archivo Excel (solo colocar la columna de la celda que
-      // busca)
-      double activoCorriente = leerCelda(0);
-      double pasivoCorriente = leerCelda(1);
+      // Asigna los valores del excel.
+      pasivo = Excel.leerCelda(HOJA, FILA, 0);
+      capital = Excel.leerCelda(HOJA, FILA, 1);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
-      // Realizar alguna operación matemática (por ejemplo, suma)
-      double indiceLiquidez = realizarOperacionMatematica(activoCorriente, pasivoCorriente);
+    double resultado = realizarOperacionMatematica(pasivo, capital);
+    return resultado;
+  }
 
-      // Escribir el resultado de vuelta al archivo Excel (solo colocar la columna de
-      // la celda y el valor a escribir)
-      escribirCelda(2, indiceLiquidez);
-
-      System.out.println("Completado Proceso");
+  public void guardarValor(double valor) {
+    try {
+      // Recuerda poner donde guardas tu resultado
+      Excel.escribirCelda(HOJA, FILA, 2, valor);
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
-  // Método para leer el valor de una celda de un archivo Excel
-  public static double leerCelda(int numeroCelda) throws IOException {
-    FileInputStream archivoEntrada = new FileInputStream(getRuta());
-    Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
-    Sheet hoja = libroTrabajo.getSheet(HOJA);
-    Row fila = hoja.getRow(FILA);
-    Cell celda = fila.getCell(numeroCelda);
-    double valorCelda = celda.getNumericCellValue();
-    libroTrabajo.close();
-    return valorCelda;
-  }
-
-  // Método para realizar una operación matemática con dos números
-  public static double realizarOperacionMatematica(double num1, double num2) {
-    // Por ejemplo, sumemos los dos números
-    return num1 / num2;
-  }
-
-  // Método para escribir el resultado de vuelta a una celda en un archivo Excel
-  public static void escribirCelda(int numeroCelda, double valor) throws IOException {
-    FileInputStream archivoEntrada = new FileInputStream(getRuta());
-    Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
-    Sheet hoja = libroTrabajo.getSheet(HOJA);
-    Row fila = hoja.getRow(FILA);
-    Cell celda = fila.createCell(numeroCelda);
-    celda.setCellValue(valor);
-
-    // Guardar los cambios de vuelta al archivo
-    FileOutputStream archivoSalida = new FileOutputStream(getRuta());
-    libroTrabajo.write(archivoSalida);
-    libroTrabajo.close();
-    archivoSalida.close();
+  // Haz todos tus calculos raros aqui
+  private double realizarOperacionMatematica(double pasivo, double capital) {
+    return pasivo / capital;
   }
 }
