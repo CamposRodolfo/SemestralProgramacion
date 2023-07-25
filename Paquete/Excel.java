@@ -26,6 +26,18 @@ public class Excel {
     return valorCelda;
   }
 
+  // Método para leer el valor de una celda de un archivo Excel
+  public static String leerCeldaString(String nombreHoja, int numeroFila, int numeroCelda) throws IOException {
+    FileInputStream archivoEntrada = new FileInputStream(getRuta());
+    Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);
+    Sheet hoja = libroTrabajo.getSheet(nombreHoja);
+    Row fila = hoja.getRow(numeroFila);
+    Cell celda = fila.getCell(numeroCelda);
+    String valorCelda = celda.getStringCellValue();
+    libroTrabajo.close();
+    return valorCelda;
+  }
+
   // Método para escribir el resultado de vuelta a una celda en un archivo Excel
   public static void escribirCelda(String nombreHoja, int numeroFila, int numeroCelda, double valor)
       throws IOException {

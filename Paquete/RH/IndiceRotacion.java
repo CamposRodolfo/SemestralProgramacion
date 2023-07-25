@@ -9,14 +9,6 @@ public class IndiceRotacion implements Operacion {
   static final String HOJA = "rh"; // Hoja de recursos humanos
   static final int FILA = 36; // Fila asignada
 
-  public static void main(String[] args) {
-    Operacion calculadora = new IndiceRotacion();
-    double resultado = calculadora.calcular();
-    calculadora.guardarValor(resultado);
-    System.out.println(resultado);
-    calculadora.explicarIndice();
-  }
-
   public double calcular() {
     // Coloca las variables que necesitas
     double separaciones = 0;

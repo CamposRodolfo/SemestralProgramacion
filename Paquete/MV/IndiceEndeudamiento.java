@@ -14,7 +14,6 @@ public class IndiceEndeudamiento implements Operacion {
   static final String HOJA = "mv"; // colocar el nombre de su hoja (mv, fc, rh)
   static final int FILA = 8; // colocar la fila que se le indico
 
-
   public double calcular() {
     double pasivo = 0;
     double capital = 0;
@@ -40,23 +39,23 @@ public class IndiceEndeudamiento implements Operacion {
     }
   }
 
- public void explicarIndice() {
+  public void explicarIndice() {
     System.out.println("El índice de endeudamiento es una ratio de solvencia\n"
-                     + "que mide qué cantidad de deuda externa utiliza\n"
-                     + "una empresa para financiar sus activos\n"
-                     + "en relación con su patrimonio neto.");
-}
+        + "que mide qué cantidad de deuda externa utiliza\n"
+        + "una empresa para financiar sus activos\n"
+        + "en relación con su patrimonio neto.");
+  }
 
   // Haz todos tus calculos raros aqui
   private double realizarOperacionMatematica(double pasivo, double capital) {
-   
+
     double resultado = pasivo / capital;
 
-        // Redondear el resultado a 2 decimales
-        DecimalFormat df = new DecimalFormat("#.##");
-        resultado = Double.parseDouble(df.format(resultado));
+    // Redondear el resultado a 2 decimales
+    DecimalFormat df = new DecimalFormat("#.##");
+    resultado = Double.parseDouble(df.format(resultado));
 
-        return resultado;
+    return resultado;
   }
-  
+
 }
