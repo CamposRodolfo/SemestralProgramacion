@@ -7,6 +7,7 @@ import Paquete.Excel;
 
 /**
  * Margen De Beneficio Neto
+ * Adriana Achurra 8-990-123
  */
 // Cambiar el nombre de la clase
 public class MargenBeneficioNeto implements Operacion {

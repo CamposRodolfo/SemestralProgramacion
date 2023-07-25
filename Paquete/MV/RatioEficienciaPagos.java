@@ -6,6 +6,7 @@ import Paquete.Excel;
 
 /**
  * Ratio De Eficiencia De Pagos
+ * Adriana Achurra 8-990-123
  */
 public class RatioEficienciaPagos implements Operacion {
   static final String HOJA = "mv"; // colocar el nombre de tu hoja (mv, fc, rh)

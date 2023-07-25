@@ -1,18 +1,14 @@
 package Paquete.MV;
 
 import java.io.IOException;
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.IndexedColors;
-
 import Paquete.Interfaces.*;
 import Paquete.Excel;
 
 /**
  * IndiceEndeudamiento
+ * Rodolfo Campos 8-905-2179
  */
+
 // Cambiar mobre de la clase
 public class IndiceLiquidez implements Operacion {
   // Atributos
