@@ -39,6 +39,11 @@ public class IndiceEndeudamiento implements Operacion {
     }
   }
 
+  public void explicarIndice() {
+    // Explica tu indice
+    System.out.println();
+  }
+
   // Haz todos tus calculos raros aqui
   private double realizarOperacionMatematica(double pasivo, double capital) {
     return pasivo / capital;

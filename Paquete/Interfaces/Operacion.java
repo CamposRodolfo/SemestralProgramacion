@@ -8,4 +8,6 @@ public interface Operacion {
   public double calcular();
 
   public void guardarValor(double valor);
+
+  public void explicarIndice();
 }
