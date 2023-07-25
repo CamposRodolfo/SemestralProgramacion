@@ -17,6 +17,7 @@ public class IndiceEndeudamiento implements Operacion {
     double resultado = calculadora.calcular();
     calculadora.guardarValor(resultado);
     System.out.println(resultado);
+    calculadora.explicarIndice();
   }
 
   public double calcular() {
@@ -45,7 +46,8 @@ public class IndiceEndeudamiento implements Operacion {
   }
 
   public void explicarIndice() {
-
+    System.out.println(
+        "El índice de endeudamiento es una ratio de solvencia que mide qué cantidad de deuda externa utiliza una empresa para financiar sus activos en relación con su patrimonio neto.");
   }
 
   // Haz todos tus calculos raros aqui

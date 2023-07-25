@@ -10,6 +10,4 @@ public interface Operacion {
   public void explicarIndice();
 
   public void guardarValor(double valor);
-
-  public void explicarIndice();
 }
