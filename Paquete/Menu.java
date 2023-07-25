@@ -68,6 +68,10 @@ public class Menu<E extends Enum<E>> {
     return resultado;
   }
 
+  public static void mensajeDespedida() {
+    System.out.println("\\*\n\n Este proyecto fue hecho por el 1SF122\n y guiado por el profesor Ronald Ponce\n\n */ ");
+  }
+  
   public static void limpiarPantalla() {
     // Limpiar pantalla
     System.out.println("\033[H\033[2J");
