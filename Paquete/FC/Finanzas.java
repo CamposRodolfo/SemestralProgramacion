@@ -22,7 +22,6 @@ public class Finanzas implements Departamento {
         if (operacionSeleccionada != null) {
             Operacion operacion = operacionSeleccionada.obtenerOperacion();
 
-            if (operacion != null) {
                 // la variable resultado va a almacenar el resultado de la operacion
                 double resultado = operacion.calcular();
                 operacion.explicarIndice();
@@ -32,7 +31,7 @@ public class Finanzas implements Departamento {
 
                 // Se retorna la operacion que ha seleccionado el usuario
                 return operacion;
-            }
+            
         }
         return null;
     }
