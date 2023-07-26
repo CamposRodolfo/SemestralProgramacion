@@ -15,13 +15,13 @@ public class TasaAusentismo implements Operacion {
 
   public double calcular() {
     // Coloca las variables que necesitas
-    int horasTrabajadas = 1750;
-    int horasAcordadas = 1800;
+    double horasTrabajadas = 1750;
+    double horasAcordadas = 1800;
 
     try {
       // Asigna los valores del excel.
-      horasTrabajadas = (int) Excel.leerCelda(HOJA, FILA, 1);
-      horasAcordadas = (int) Excel.leerCelda(HOJA, FILA, 2);
+      horasTrabajadas = Excel.leerCelda(HOJA, FILA, 1);
+      horasAcordadas = Excel.leerCelda(HOJA, FILA, 2);
     } catch (IOException e) {
       e.printStackTrace();
     }
