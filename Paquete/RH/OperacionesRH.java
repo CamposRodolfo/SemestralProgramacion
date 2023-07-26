@@ -11,7 +11,14 @@ public enum OperacionesRH {
   INDICE_DE_CAPACITACION_Y_DESARROLLO(IndiceCapacitacionDesarrollo.class.getName()),
   INDICE_DE_SATISFACCION_LABORAL(IndiceDeSatisfaccionLaboral.class.getName()),
   INDICE_DE_ROTACION_DE_PERSONAL(IndiceRotacion.class.getName()),
-  TASA_DE_AUSENTISMO_POR_EMPLEADO(TasaAusentismo.class.getName());
+  TASA_DE_AUSENTISMO_POR_EMPLEADO(TasaAusentismo.class.getName()),
+  COSTO_DE_AUSENTISMO_POR_EMPLEADO(CostoAusentismoEmpleado.class.getName()),
+  COSTO_POR_CONTRATACION(CostoPorContratacion.class.getName())
+  
+  ;
+
+    private OperacionesRH() {
+    }
 
   private String claseOperacion;
 
