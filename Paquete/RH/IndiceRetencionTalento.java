@@ -45,10 +45,10 @@ public class IndiceRetencionTalento implements Operacion {
   }
 
   public void explicarIndice() {
-    System.out.print("""
-        El indice RetenciónTalento se calcula utilizando el total de empleados de un período específico entre (/)
-        el total de bajas del mismo período de tiempo y se multiplica por 100, el resultado nos permite saber el
-        porcentaje de perosnas que conservan sus puestos de trabajo en el período en un período de tiempo establecido.
-          """);
+    System.out.print(
+      "El indice RetenciónTalento se calcula utilizando el total de empleados de un período específico entre (/)\n" +
+      "el total de bajas del mismo período de tiempo y se multiplica por 100, el resultado nos permite saber el\n" +
+      "porcentaje de personas que conservan sus puestos de trabajo en el período en un período de tiempo establecido."
+    );
   }
 }

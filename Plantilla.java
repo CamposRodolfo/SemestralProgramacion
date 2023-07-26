@@ -9,7 +9,7 @@ import Paquete.Excel;
  * IndiceEndeudamiento
  */
 // Cambiar mobre de la clase
-public class IndiceEndeudamiento implements Operacion {
+public class Plantilla implements Operacion {
   static final String HOJA = "mv"; // colocar el nombre de tu hoja (mv, fc, rh)
   static final int FILA = 1; // colocar tu filaque se le indico
 
