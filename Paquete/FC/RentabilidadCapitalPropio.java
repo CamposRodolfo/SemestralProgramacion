@@ -46,6 +46,6 @@ public class RentabilidadCapitalPropio implements Operacion {
     }
 
     private double realizarOperacionMatematica(double beneficioNeto, double capitalPropio) {
-        return beneficioNeto / capitalPropio;
+        return ((beneficioNeto / capitalPropio) * 100);
     }
 }
