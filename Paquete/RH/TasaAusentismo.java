@@ -45,8 +45,7 @@ public class TasaAusentismo implements Operacion {
         "La tasa de ausentismo, que se calcula con el número de horas trabajadas y el número de horas acordadas en el contrato, mide la proporción de tiempo que los empleados faltan al trabajo, lo que ayuda a evaluar la eficiencia y el bienestar del personal en una organización.");
   }
 
-  // Haz todos tus calculos raros aqui
-  private double realizarOperacionMatematica(int horasTrabajadas, int horasAcordadas) {
+  private double realizarOperacionMatematica(double horasTrabajadas, double horasAcordadas) {
     return ((horasTrabajadas / horasAcordadas) * 100);
   }
 }
