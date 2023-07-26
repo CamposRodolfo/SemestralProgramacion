@@ -8,13 +8,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Excel {
+  // private static String ruta
+  // ="C:\\Users\\bolo3\\Downloads\\[Semestral][1SF122][Proyecto
+  // Final][26-07-2023]\\src\\Paquete\\Database.xlsx";
   private static String ruta = "Paquete/Database.xlsx";
 
   public static String getRuta() {
     return ruta;
   }
 
-  // Método para leer el valor de una celda de un archivo Excel
   public static double leerCelda(String nombreHoja, int numeroFila, int numeroCelda) throws IOException {
     FileInputStream archivoEntrada = new FileInputStream(getRuta());
     Workbook libroTrabajo = new XSSFWorkbook(archivoEntrada);

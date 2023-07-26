@@ -6,8 +6,7 @@ package Paquete.Interfaces;
 public interface Operacion {
 
   public double calcular();
-
   public void explicarIndice();
-
   public void guardarValor(double valor);
+  
 }

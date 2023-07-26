@@ -11,23 +11,19 @@ import java.io.IOException;
 import Paquete.Interfaces.*;
 import Paquete.Excel;
 
-
 public class CostoAusentismoEmpleado implements Operacion {
-    static final String HOJA = "rh"; // colocar el nombre de tu hoja (mv, fc, rh)
-    static final int FILA = 40; // colocar tu filaque se le indico
+  static final String HOJA = "rh"; // colocar el nombre de tu hoja (mv, fc, rh)
+  static final int FILA = 40; // colocar tu filaque se le indico
 
-    public double calcular() {
+  public double calcular() {
 
     float SalarioNeto = 0;
     float Dias = 0;
-    
-
 
     try {
       // Asigna los valores del excel.
       SalarioNeto = (float) Excel.leerCelda(HOJA, FILA, 1);
       Dias = (float) Excel.leerCelda(HOJA, FILA, 2);
-
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -38,7 +34,7 @@ public class CostoAusentismoEmpleado implements Operacion {
 
   public void guardarValor(double valor) {
     try {
-      
+
       Excel.escribirCelda(HOJA, FILA, 4, valor);
     } catch (IOException e) {
       e.printStackTrace();

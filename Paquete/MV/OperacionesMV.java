@@ -14,7 +14,9 @@ public enum OperacionesMV {
   RATIO_DE_EFICIENCIA_DE_INVENTARIO(EficienciaInventarios.class.getName()),
   RATIO_DE_EFICIENCIA_DE_COBROS(RatioEficienciaCobros.class.getName()),
   RATIO_DE_EFICIENCIA_DE_PAGOS(RatioEficienciaPagos.class.getName()),
-  TASA_DE_RETORNO_DE_INVERSION(RetornoDeLaInversión.class.getName());
+  TASA_DE_RETORNO_DE_INVERSION(RetornoDeLaInversión.class.getName())
+  ;
+
 
   private String claseOperacion;
 
