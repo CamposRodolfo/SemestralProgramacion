@@ -22,18 +22,27 @@ public class Finanzas implements Departamento {
         if (operacionSeleccionada != null) {
             Operacion operacion = operacionSeleccionada.obtenerOperacion();
 
-                // la variable resultado va a almacenar el resultado de la operacion
-                double resultado = operacion.calcular();
-                operacion.explicarIndice();
+            // la variable resultado va a almacenar el resultado de la operacion
+            double resultado = operacion.calcular();
+            operacion.explicarIndice();
 
-                // Se establece el valor del calculo en la respectiva celda del Excel
-                operacion.guardarValor(resultado);
+            System.out.println(convertirSnakeANormal(operacionSeleccionada.toString()) + " = " + resultado);
 
-                // Se retorna la operacion que ha seleccionado el usuario
-                return operacion;
-            
+            // Se establece el valor del calculo en la respectiva celda del Excel
+            operacion.guardarValor(resultado);
+
+            // Se retorna la operacion que ha seleccionado el usuario
+            return operacion;
+
         }
         return null;
+    }
+
+    private String convertirSnakeANormal(String string) {
+        String resultado = string.replace("_", " ").toLowerCase();
+        resultado = resultado.substring(0, 1).toUpperCase() + resultado.substring(1);
+
+        return resultado;
     }
 
 }
