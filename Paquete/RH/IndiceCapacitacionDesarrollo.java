@@ -11,7 +11,7 @@ import Paquete.Excel;
 // Cambiar mobre de la clase
 public class IndiceCapacitacionDesarrollo implements Operacion {
   static final String HOJA = "rh"; // colocar el nombre de tu hoja (mv, fc, rh)
-  static final int FILA = 17; // colocar tu filaque se le indico
+  static final int FILA = 16; // colocar tu filaque se le indico
 
   public double calcular() {
     // Coloca las variables que necesitas
@@ -45,7 +45,7 @@ public class IndiceCapacitacionDesarrollo implements Operacion {
   }
 
   // Haz todos tus calculos raros aqui
-  private double realizarOperacionMatematica(double completadas, double requeridas) {
+  private double realizarOperacionMatematica(int completadas, int requeridas) {
     return Double.parseDouble(new java.text.DecimalFormat("#.####").format(1.00*completadas/requeridas));
   }
 }
